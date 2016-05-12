@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # Checks pre-deploy safeguards - tests, app keys, package versions - then deploys.
+# Arguments are passed to appcfg.py.
 #
 # Expects that your local bridgy, granary, and oauth-dropins repos are all in
 # the same directory, and that you have the App Engine SDK installed.
@@ -35,4 +36,4 @@ echo 'Package versions OK.'
 
 # push commits and deploy!
 git push
-appcfg.py update .
+appcfg.py $@ update .
